@@ -1,27 +1,20 @@
 use serde::{Deserialize, Serialize};
 
-#[derive(Serialize, Deserialize, Debug)]
-struct Operacion {
-    operando1: f64,
-    operando2: f64,
-    operador: String,
+mod operaciones;
+
+#[derive(Serialize, Deserialize, Debug, Clone)]
+pub struct Operacion {
+    pub operando1: f64,
+    pub operando2: f64,
+    pub operador: String,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
-struct Resultado {
+pub struct Resultado {
     operacion: Operacion,
     resultado: f64,
 }
 
-fn calcular(op: &Operacion) -> f64 {
-    match op.operador.as_str() {
-        "+" => op.operando1 + op.operando2,
-        "-" => op.operando1 - op.operando2,
-        "*" => op.operando1 * op.operando2,
-        "/" => op.operando1 / op.operando2,
-        _ => 0.0,
-    }
-}
 
 fn main() {
     let operacion = Operacion {
@@ -31,9 +24,8 @@ fn main() {
     };
     
     let resultado = Resultado {
-        operacion: operacion,
-        resultado: calcular(&operacion),
-    };
+        operacion: operacion.clone(),
+        resultado: operaciones::calcular(&operacion) };
     
     let json = serde_json::to_string_pretty(&resultado).unwrap();
     println!("{}", json);
