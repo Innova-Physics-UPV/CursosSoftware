@@ -5,22 +5,17 @@
 	let nuevoGasto = '';
 
 	function guardar() {
-		const valor = Number(nuevoGasto);
-		if (isNaN(valor)) return;
-
-		// Añadimos al store de datos y creamos una etiqueta simple
+        
 		datos.update((arr) => {
-			const next = [...arr, valor];
-			return next;
+            const next = [...arr, valor];
+            return next;
 		});
-
 		etiquetas.update((arr) => {
-			const next = [...arr, `N${arr.length + 1}`];
-			return next;
+        //Completar 
 		});
-
 		nuevoGasto = '';
 	}
+//
 </script>
 
 <BaseCard>
