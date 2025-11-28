@@ -1,3 +1,4 @@
+//Falta cargo.toml, debes agregarlo tu mismo
 #[derive(Debug, Clone)]
 struct Empleado {
     nombre: String,
