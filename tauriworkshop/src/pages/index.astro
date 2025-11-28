@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BaseCard from '../components/BaseCard.svelte';
+import CardControls from '../components/CardControls.svelte';
+import CardBalance from '../components/CardBalance.svelte';
+import CardChart from '../components/CardChart.svelte';
+
+// Datos simulados
+const history = [10, 25, 40, 30, 55,78, 90, 100, 85, 120, 130, 150, 170, 160, 180, 200, 220, 240, 230, 250];
+---
+
+<Layout title="Mi Dashboard">
+<main class="dashboard-grid">
+        <!-- Area 1: Balance (Ocupa todo el ancho) -->
+        <div class="area-balance">
+            <CardBalance client:load />
+        </div>
+
+        <!-- Area 2: Gráfica -->
+        <div class="area-chart">
+             <!-- Importante client:load para que JS funcione -->
+            <CardChart client:load />
+        </div>
+
+        <!-- Area 3: Controles -->
+        <div class="area-controls">
+            <CardControls client:load />
+        </div>
+    </main>
+</Layout>
+
+<style>
+</style>

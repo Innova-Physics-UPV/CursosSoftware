@@ -1,0 +1,197 @@
+# .gitignore - Java, C, Rust, Python, Astro, Svelte, Tauri y varios IDEs (VSCode, JetBrains, Eclipse, NetBeans)
+########################
+# Sistema / generales
+########################
+# Thumbs / DS_Store / desktop
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos temporales / logs
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+*.orig
+
+# Locks / caches
+*.lock
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+########################
+# Node / frontend (Astro, Svelte, general)
+########################
+node_modules/
+.pnpm-store/
+.pnpm-debug.log
+# caches / builds
+.cache/
+.next/
+.dist/
+dist/
+build/
+.public/
+.astro/
+.svelte-kit/
+.vite/
+.vitepress/
+.parcel-cache/
+.esbuild/
+# env local
+.env
+.env.*.local
+.env.local
+.env.development.local
+.env.production.local
+
+########################
+# Tauri (node + Rust mixed)
+########################
+# Node part handled above
+# Rust build artifacts for the tauri native side
+src-tauri/target/
+src-tauri/**/*.lock
+# Tauri dev artifacts
+src-tauri/tauri.conf.bak
+# If using Tauri CLI caching
+.tauri/
+
+########################
+# Java
+########################
+# Compiled class files
+*.class
+# Build dirs
+target/
+build/
+out/
+# IDE / Maven / Gradle
+.mvn/
+!.mvn/wrapper/maven-wrapper.jar
+.gradle/
+gradle-app.setting
+# Eclipse
+.classpath
+.project
+.settings/
+# IntelliJ / JetBrains (also below)
+*.iml
+
+########################
+# C / C++
+########################
+# Object files, executables, shared libs
+*.o
+*.obj
+*.so
+*.a
+*.lib
+*.dll
+*.exe
+*.out
+a.out
+core
+# Build directories & tooling
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile.user
+Makefile.in
+*.dSYM/
+# autotools
+autom4te.cache/
+
+########################
+# Rust
+########################
+target/
+# Cargo lock: normalmente se registra para apps; si quieres ignorarlo, descomenta:
+# Cargo.lock
+# Rust cache / tooling
+**/*.rs.bk
+
+########################
+# Python
+########################
+__pycache__/
+*.py[cod]
+*$py.class
+# virtualenvs
+venv/
+env/
+.venv/
+.venv*/
+pip-log.txt
+pip-delete-this-directory.txt
+# testing / tooling
+.pytest_cache/
+coverage/
+htmlcov/
+.tox/
+.mypy_cache/
+.pyre/
+pdm.lock
+.python-version
+# Jupyter
+.ipynb_checkpoints
+
+########################
+# IDEs / editores
+########################
+# Visual Studio Code
+.vscode/
+# VSCode workspace files (if you want to allow some, ajusta)
+*.code-workspace
+
+# JetBrains (IntelliJ, PyCharm, CLion, etc.)
+.idea/
+*.iml
+workspace.xml
+tasks.xml
+usage.statistics.xml
+# Eclipse and NetBeans already partly covered
+# NetBeans
+nbproject/private/
+build/
+dist/
+# Sublime
+*.sublime-workspace
+*.sublime-project
+
+########################
+# Containers / CI / Build system
+########################
+# Docker
+docker-compose.override.yml
+docker-compose.*.yml
+**/Dockerfile.*
+# Kubernetes / helm / secret files
+secrets.yml
+*.pem
+*.key
+
+########################
+# Editor backups / OS metadata
+########################
+# Mac
+.AppleDouble
+.LSOverride
+# Windows
+ehthumbs.db
+Icon?
+# Thumbnail caches  
+Thumbs.db
+
+########################
+# Optional: generated docs / artifacts
+########################
+docs/_build/
+site/
+coverage/
+
+########################
