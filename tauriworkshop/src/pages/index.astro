@@ -1,10 +1,18 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import BaseCard from '../components/BaseCard.svelte';
-
+//import CardControls from '../components/CardControls.svelte';
+//import CardBalance from '../components/CardBalance.svelte';
+//import CardChart from '../components/CardChart.svelte';
 ---
-	  <h1 class="text-4xl font-bold underline">Hello, World!</h1>
-	  <p>Welcome to your new Astro project.</p>
-	  <BaseCard>
-	    <h2 class="text-2xl font-semibold mb-2">Card Title</h2>
-	    <p>This is some content inside the card component.</p>
-	  </BaseCard>
+
+<Layout title="Mi Dashboard">
+<main class="dashboard-grid">
+    <BaseCard > 
+        <p>Contenido de la tarjeta 1</p>
+    </BaseCard>
+</main>
+</Layout>
+
+<style>
+</style>
