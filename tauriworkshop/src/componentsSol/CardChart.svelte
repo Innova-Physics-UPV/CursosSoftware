@@ -1,119 +1,110 @@
-<script>
-    import { onDestroy } from 'svelte';
-    import { scaleLinear, scalePoint } from 'd3-scale';
-    import { line, curveMonotoneX } from 'd3-shape';
-    import { max } from 'd3-array';
-    import { spring } from 'svelte/motion';
+<script lang="ts">
+    import { scaleLinear } from 'd3-scale';
+    import { line, curveMonotoneX,curveStep,curveBasis } from 'd3-shape';
+    import {min, max } from 'd3-array';
+    import {datos, etiquetas} from '../lib/stores.svelte.js';
+    import BaseCard from './BaseCard.svelte';
+    // 1. Datos y Etiquetas
+    // 2. Dimensiones
+    let containerWidth = $state(300);
+    let height = 250;
+    let margin = { top: 20, right: 20, bottom: 40, left: 40 };
+    // 3. Escalas
+let xScale = $derived(
+        scaleLinear()
+            .domain([0, datos.length - 1]) 
+            .range([margin.left, containerWidth - margin.right])
+    );
 
-    // Use shared stores
-    import { datos, etiquetas } from '../lib/stores.js';
+    let yScale = $derived(
+        scaleLinear()
+            .domain([min(datos)||-100 , max(datos) || 100])
+            .range([height - margin.bottom, margin.top])
+    );
 
-    // Local layout state
-    let width = 600;
-    let height = 300;
-    let puntoSeleccionado = null;
-    const margin = { top: 20, right: 20, bottom: 30, left: 40 };
-
-    // Animated visual store (spring) and sync with datos store
-    const datosVisuales = spring([], { stiffness: 0.1, damping: 0.4 });
-    const unsubDatos = datos.subscribe((v) => {
-        datosVisuales.set(v || []);
-    });
-
-    // Keep etiquetas in a local array for scale domains
-    let etiquetasArr = [];
-    const unsubEtiquetas = etiquetas.subscribe((v) => {
-        etiquetasArr = v || [];
-    });
-
-    onDestroy(() => {
-        unsubDatos();
-        unsubEtiquetas();
-    });
-
-    // Reactive D3 scales / generators
-    $: xScale = scalePoint().domain(etiquetasArr.length ? etiquetasArr : datosPositions($datosVisuales.length)).range([margin.left, width - margin.right]);
-    $: yScale = scaleLinear().domain([0, max($datosVisuales) || 100]).range([height - margin.bottom, margin.top]);
-
-    // Precompute x positions so we can fallback when etiquetasArr is missing or mismatched
-    $: xPositions = (etiquetasArr.length === $datosVisuales.length)
-        ? etiquetasArr.map((l) => xScale(l))
-        : $datosVisuales.map((_, i) => margin.left + (i * ((width - margin.left - margin.right) / Math.max(1, $datosVisuales.length - 1))));
-
-    $: lineaGenerator = line().x((d, i) => xPositions[i]).y((d) => yScale(d)).curve(curveMonotoneX);
-    $: pathD = $datosVisuales && $datosVisuales.length ? lineaGenerator($datosVisuales) : '';
-
-    $: tooltipLeft = puntoSeleccionado !== null ? xPositions[puntoSeleccionado] : 0;
-    $: tooltipTop = puntoSeleccionado !== null && $datosVisuales[puntoSeleccionado] !== undefined ? yScale($datosVisuales[puntoSeleccionado]) - 40 : 0;
-
-    function datosPositions(n) {
-        // Return placeholder domain values for scalePoint if needed
-        return Array.from({ length: Math.max(1, n) }, (_, i) => String(i));
-    }
+    // 4. Generador de Línea
+    let pathD = $derived(
+        line<number>()
+            .x((_, i) => xScale(i))
+            .y((d) => yScale(d))
+            .curve(curveMonotoneX)(datos) || "" // Pasamos el valor del store
+    );
+    //Probar con curveMonotoneX, curveStep, curveBasis
 </script>
-
-<div class="chart-container" bind:clientWidth={width}>
-    <svg {width} {height} role="img" aria-label="Gráfico de gastos">
-        <!-- Eje X -->
-        <g class="axis x-axis">
-            {#if etiquetasArr.length}
-                {#each etiquetasArr as lab, i}
-                    <g transform={"translate(" + xPositions[i] + ", " + (height - margin.bottom) + ")"}>
-                        <line y2="6" stroke="#ccc" />
-                        <text y="20" text-anchor="middle" font-size="12" fill="#666">{lab}</text>
-                    </g>
-                {/each}
-            {/if}
+<BaseCard>
+<div class="chart-container" bind:clientWidth={containerWidth}>
+    <svg width={containerWidth} {height}>
+        <!-- Ejes -->
+         {#each yScale.ticks(5) as tick}
+        <g transform="translate(0, {yScale(tick)})">
+            
+            <line 
+                x1={margin.left} 
+                x2={containerWidth - margin.right} 
+                stroke="#eee" 
+                stroke-dasharray="4"
+            />
+            
+            <text 
+                x={margin.left - 10} 
+                y="0" 
+                dy="0.32em" 
+                text-anchor="end" 
+                font-size="11" 
+                fill="#999"
+            >
+                {tick}
+            </text>
         </g>
+    {/each}
 
-        <!-- LÍNEA DE DATOS (Morphing) -->
-        <path d={pathD} fill="none" stroke="rgb(255, 99, 132)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="transition: stroke 0.3s;" />
+    <line 
+        x1={margin.left} 
+        y1={margin.top} 
+        x2={margin.left} 
+        y2={height - margin.bottom} 
+        stroke="#ccc" 
+    />
+        {#each datos as d, i}
+            {@const etiquetaActual = etiquetas[i % etiquetas.length]}
+            <g transform="translate({xScale(i)}, {height - margin.bottom})">
+                <line y2="6" stroke="#ccc" />
+                <text 
+                    y="20" 
+                    text-anchor="middle" 
+                    font-size="12" 
+                    fill="#666"
+                >
+                    {etiquetaActual}
+                </text>
+            </g>
+        {/each}
 
-        <!-- PUNTOS INTERACTIVOS -->
-        {#each $datosVisuales as d, i}
-            <circle
-                role="button"
-                tabindex="0"
-            cx={xPositions[i]}
-                cy={yScale(d)}
-                r={puntoSeleccionado === i ? 8 : 5}
-                fill="white"
-                stroke="rgb(255, 99, 132)"
+        <path 
+            d={pathD} 
+            fill="none" 
+            stroke="rgb(255, 99, 132)" 
+            stroke-width="3" 
+            stroke-linecap="round"
+        />
+
+        {#each datos as d, i}
+            <circle 
+                cx={xScale(i)} 
+                cy={yScale(d)} 
+                r="4" 
+                fill="white" 
+                stroke="rgb(255, 99, 132)" 
                 stroke-width="2"
-                on:mouseenter={() => (puntoSeleccionado = i)}
-                on:mouseleave={() => (puntoSeleccionado = null)}
-                style="cursor: pointer; transition: r 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);"
             />
         {/each}
+        
     </svg>
-
-    {#if puntoSeleccionado !== null}
-        <div
-            class="tooltip"
-            style="left: {tooltipLeft}px; top: {tooltipTop}px;"
-        >
-            <strong>{etiquetasArr[puntoSeleccionado]}</strong>: {Math.round($datosVisuales[puntoSeleccionado])}
-        </div>
-    {/if}
 </div>
-
+</BaseCard>
 <style>
     .chart-container {
-        position: relative;
         width: 100%;
-    }
-
-    .tooltip {
-        position: absolute;
-        transform: translateX(-50%);
-        background: #333;
-        color: #fff;
-        padding: 4px 8px;
-        border-radius: 4px;
-        font-size: 0.8rem;
-        pointer-events: none;
-        white-space: nowrap;
-        z-index: 10;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        font-family: sans-serif;
     }
 </style>

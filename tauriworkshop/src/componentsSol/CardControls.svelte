@@ -1,29 +1,66 @@
-<script>
-	import BaseCard from './BaseCard.svelte';
-	import { datos, etiquetas } from '../lib/stores.js'; //Donde estan guardados los datos
+<script lang="ts">
+    import BaseCard from './BaseCard.svelte';
+    import { datos, etiquetas } from '../lib/stores.svelte.js'; 
 
-	//Declarar variable para guardar el input del usuario
+    // 1. VARIABLE REACTIVA ($state)
+    // En Svelte 5, las variables locales necesitan $state para reaccionar.
+	let nuevoGasto = $state<number | null>(null);
+	let mensajeerror= $state<string>("");
 
-	function guardar() {
-		//Que ocurre si el usuario no introduce un número válido?
-		//const valor = ...; //El input es un string, hay que convertirlo a número
-
-		// Añadimos al store de datos y creamos una etiqueta simple
-		datos.update((arr) => {
-			//const next = [...arr, valor];//añadimos un nuevo valor al array
-			//return next; 				//retornamos el nuevo array
-		});
-
-		etiquetas.update((arr) => {
-			//Completar, ¿Que valor queremos añadir?
-		});
-	}
+    function guardar() {
+        // Validación simple: que sea número y que no esté vacío
+        if (nuevoGasto === null ) 
+			{mensajeerror="Por favor, ingresa un valor numérico válido.";
+			return;}
+		else{
+			mensajeerror="";
+			datos.push(nuevoGasto);
+			nuevoGasto = null;
+}}
 </script>
 
 <BaseCard>
-	<h3>Add Moves</h3>
-	<div class="input-group">
-		<input type="number"/><!---Guardar este input en una variable. PISTA:bind en documentación de svelte---> 
-		<button >Guardar</button><!---Ejecutar logica cuando se presione un boton PISTA:onClick en documentación de sveltes---> 
-	</div>
+    <h3>Añade Movimientos</h3>
+    <div class="input-group">
+        <input 
+            type="number" 
+            placeholder="0"
+            bind:value={nuevoGasto} 
+            onkeydown={(e)=>{if(e.key == 'Enter'){guardar();}}}
+        />
+        <button onclick={guardar} >
+            Guardar
+        </button>
+        
+		<div class="error-msg">
+			{mensajeerror}
+	    </div>
+      
+    </div>
 </BaseCard>
+
+<style>
+    .input-group {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    input {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button {
+        cursor: pointer;
+        background-color: #eee;
+        border: 1px solid #ccc;
+        padding: 5px 10px;
+        border-radius: 4px;
+    }
+    .error-msg {
+        color: #dc3545;
+        font-size: 0.85rem;
+        margin-left: 2px;
+        animation: fadeIn 0.3s ease-in;
+    }
+</style>

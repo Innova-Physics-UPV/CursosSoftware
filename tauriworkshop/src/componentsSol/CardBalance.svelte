@@ -1,9 +1,9 @@
 <script>
   import BaseCard from './BaseCard.svelte';
-  import { datos } from '../lib/stores.js';
+  import { datos } from '../lib/stores.svelte.js';
 
   // Derivamos el total directamente desde el store de `datos`
-  $: total = $datos.reduce((a, b) => a + b, 0);
+  let total = $derived(datos.reduce((a, b) => a + b, 0));
 </script>
 
 <BaseCard>
@@ -36,13 +36,6 @@
     font-weight: 800;
     margin: 0.5rem 0;
     
-    /* TRUCO VISUAL: Texto con gradiente de color */
-    background: linear-gradient(to right, #2563eb, #3b82f6);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    /* Si el truco falla en algún navegador antiguo, se verá azul sólido */
-    color: #2563eb; 
   }
 
   .etiqueta {

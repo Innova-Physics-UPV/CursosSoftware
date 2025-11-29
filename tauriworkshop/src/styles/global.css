@@ -30,7 +30,7 @@ body {
   /* color: #f9fafb; */
 
   /* OPCIÓN C: Gradiente*/
-  /* background: linear-gradient(to right, #8e2de2, #4a00e0); */
+  background: linear-gradient(to right, #ec481b, #4a00e0);/*/
   /* color: white; */
 }
 
@@ -58,7 +58,7 @@ body {
 .dashboard-grid {
         display: grid;
         /* Definimos 2 columnas y filas automáticas */
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 1.5rem;
         padding: 2rem;
         max-width: 1200px;
@@ -67,7 +67,7 @@ body {
 
     /* El balance ocupa las 2 columnas de la primera fila */
     .area-balance {
-        grid-column: 1 / -1; 
+        grid-column: 1 ; 
     }
 
     /* Los otros elementos ocupan 1 celda por defecto */
@@ -78,6 +78,9 @@ body {
 
   /* Reto 2: La gráfica ocupa 2 de las 3 columnas */
   .area-chart {
-    grid-column: span 2; /* "Fusiona" 2 celdas */
+    grid-column: 2/-1; /* "Fusiona" 2 celdas */
     /* grid-row: span 2;    <-- Descomenta para hacerla más alta */
+  }
+  .area-controls {
+    grid-column: 1/-1;
   }
