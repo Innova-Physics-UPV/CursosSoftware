@@ -1,18 +1,21 @@
 <script>
     import BaseCard from './BaseCard.svelte';
-    
     // TODO 1: Importa 'datos' desde '../lib/stores.svelte.js'
-    
+    import {datos} from '../lib/stores.svelte.js';
+	
     // TODO 2: Crea la variable 'total' usando $derived
     // Pista: $derived( datos.reduce( ... ) )
-    
+    let total = $derived(datos.reduce(suma, 0))
+	
+	function suma(a,b) {return a+b;}
+	
 </script>
 
 <BaseCard>
     <div class="contenedor-balance">
         <h3>Balance Total</h3>
         
-        <p class="cifra"> 0 euros</p>
+        <p class="cifra"> {total} euros</p>
         
         <span class="etiqueta">Disponible</span>
     </div>
@@ -28,7 +31,7 @@
 
     h3 {
         margin: 0;
-        color: #6b7280; /* Gris metalizado */
+        color: white; /* Gris metalizado */
         font-size: 0.9rem;
         text-transform: uppercase;
         letter-spacing: 1px;

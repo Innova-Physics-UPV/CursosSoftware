@@ -29,6 +29,8 @@ void mostrar_empleado(const Empleado* emp) {
 }
 
 int main() {
+    Empleado* emp = crear_empleado("Juan Perez", 30, 50000.0);
+    mostrar_empleado(emp);
     // TODO: crear al menos un Empleado y mostrarlo
     return 0;
 }

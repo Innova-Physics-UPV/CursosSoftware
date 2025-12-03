@@ -1,16 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import BaseCard from '../components/BaseCard.svelte';
-//import CardControls from '../components/CardControls.svelte';
-//import CardBalance from '../components/CardBalance.svelte';
-//import CardChart from '../components/CardChart.svelte';
+import CardControls from '../components/CardControls.svelte';
+import CardBalance from '../components/CardBalance.svelte';
+import CardChart from '../components/CardChart.svelte';
 ---
 
 <Layout title="Mi Dashboard">
 <main class="dashboard-grid">
-    <BaseCard > 
-        <p>Contenido de la tarjeta 1</p>
-    </BaseCard>
+	<div class= "area-controls">
+    <CardChart client:idle/>
+	</div>
+	<CardControls client:idle/> 
+	<div class ="area-chart">
+	<CardBalance client:idle/>
+	</div>
 </main>
 </Layout>
 

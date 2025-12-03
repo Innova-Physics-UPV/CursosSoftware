@@ -2,7 +2,7 @@
     import { scaleLinear } from 'd3-scale';
     import { line, curveMonotoneX, curveStep, curveBasis } from 'd3-shape';
     import { min, max } from 'd3-array';
-    //import { datos, etiquetas } from '../lib/stores.svelte.js';
+    import { datos, etiquetas } from '../lib/stores.svelte.js';
     import BaseCard from './BaseCard.svelte';
 
     // --- 1. CONFIGURACIÓN ---
@@ -15,21 +15,82 @@
     
     // TODO 1: Crear Escala X ($derived)
     // Debe mapear el índice del array (0, 1, 2...) a píxeles horizontales
+	const escalaX= $derived(scaleLinear()
+		.domain([0, datos.length-1])
+		.range([margin.left, containerWidth-margin.right]));
     
     // TODO 2: Crear Escala Y ($derived)
     // Debe mapear el valor monetario (min a max) a píxeles verticales
+	const escalaY= $derived(scaleLinear()
+		.domain([min(datos), max(datos)])
+		.range([height-margin.bottom, margin.top]));
     
     // TODO 3: Generador de Línea ($derived)
     // Debe usar d3.line() con las escalas anteriores para crear el "path"
+	const pathString = $derived(line().x((dato, indice) => escalaX(indice)).y((dato) => escalaY(dato)).curve(curveMonotoneX)(datos));
+
+
+//const pathString = $derived(generador(datos));
 
 </script>
 
 <BaseCard>
     <div class="chart-container" bind:clientWidth={containerWidth}>
-        
         <svg width={containerWidth} {height}>
-            
-            </svg>
+        <!-- Capa 1: Eje Y y Rejilla -->
+        {#each escalaY.ticks(5) as tick}
+            <g transform="translate(0, {escalaY(tick)})">
+            <line
+                x1={margin.left}
+                x2={containerWidth - margin.right}
+                stroke="#eee"
+                stroke-dasharray="4"
+            />
+            <text
+                x={margin.left - 6}
+                text-anchor="end"
+                fill="#eee"
+                dy="0.32em"
+            >
+                {tick}
+            </text>
+            </g>
+        {/each}
+
+        <!-- Capa 2: Eje X (Etiquetas) -->
+        {#each datos as d, i}
+            <g transform="translate({escalaX(i)}, {height - margin.bottom})">
+            <line y2="6" stroke="#eee" />
+            <text
+                y="20"
+                text-anchor="middle"
+                fill="#eee"
+            >
+                {etiquetas[i % etiquetas.length]}
+            </text>
+            </g>
+        {/each}
+
+        <!-- Capa 3: Línea de Datos -->
+        <path
+            d="{pathString}"
+            fill="none"
+            stroke="#00ff99"
+            stroke-width="3"
+            stroke-linecap="round"
+        />
+
+        <!-- Capa 4: Puntos Interactivos -->
+        {#each datos as d, i}
+            <circle
+            cx={escalaX(i)}
+            cy={escalaY(d)}
+            r="4"
+            fill="white"
+            stroke="#00ff99"
+            />
+        {/each}
+        </svg>
 
     </div>
 </BaseCard>

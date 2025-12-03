@@ -1,4 +1,5 @@
 use serde::{Deserialize, Serialize};
+use serde_json::to_string_pretty;
 
 #[derive(Serialize, Deserialize, Debug)]
 struct Operacion {
@@ -35,6 +36,18 @@ fn main() {
         resultado: calcular(&operacion),
     };
     
-    let json = serde_json::to_string_pretty(&resultado).unwrap();
+    let json = {
+        match &resultado {
+            value => {
+            }
+            _ => (),
+        }
+        let vec = try(to_vec_pretty(value));
+        let string = unsafe {
+            // We do not emit invalid UTF-8.
+            String::from_utf8_unchecked(vec)
+        };
+        Ok(string)
+    }.unwrap();
     println!("{}", json);
 }

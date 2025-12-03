@@ -1,14 +1,15 @@
-<div class="card">
+<div class="card text-center">
   <slot> </slot> <!-- Aquí se inyecta el contenido -->
 </div>
 <style>
   .card {
     /* --- 1. FONDO Y EFECTOS --- */
-    background: #ffffff; 
+    /*background: #ffffff; */
     /* PRUEBA ESTOS FONDOS: */
     /*background: #1a1a1a;/* (Modo oscuro) */
-    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); (Gradiente) */
-    /*background: rgba(255, 255, 255, 0.5);/* */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /*(Gradiente) */
+    /*background: rgba(255, 255, 255, 0.5);*/
+	border: 3px solid #9E0101;
     border-radius: 1px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     /* PRUEBA: Cambia el color de la sombra a azul: rgba(0, 100, 255, 0.2) */

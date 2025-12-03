@@ -1,0 +1,598 @@
+   0.133974800s  INFO prepare_target{force=false package_id=calculadora v0.1.0 (C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust) target="calculadora"}: cargo::core::compiler::fingerprint: fingerprint error for calculadora v0.1.0 (C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust)/Check { test: false }/TargetInner { name: "calculadora", doc: true, ..: with_path("C:\\Users\\Yuxiao\\Documents\\GitHub\\CursosSoftware\\LenguajesProgramación\\ejercicio1\\rust\\src\\main.rs", Edition2021) }
+   0.139675800s  INFO prepare_target{force=false package_id=calculadora v0.1.0 (C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust) target="calculadora"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\calculadora-3aa8ad7ceaf3aaa8\bin-calculadora`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_libgit2_prerelease
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+   0.220504200s  INFO prepare_target{force=false package_id=serde v1.0.228 target="serde"}: cargo::core::compiler::fingerprint: fingerprint error for serde v1.0.228/Check { test: false }/TargetInner { ..: lib_target("serde", ["lib"], "C:\\Users\\Yuxiao\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde-1.0.228\\src\\lib.rs", Edition2021) }
+   0.221066100s  INFO prepare_target{force=false package_id=serde v1.0.228 target="serde"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\serde-b60bc58060b423fe\lib-serde`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_libgit2_prerelease
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.223028900s  INFO prepare_target{force=false package_id=serde v1.0.228 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for serde v1.0.228/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\Yuxiao\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde-1.0.228\\build.rs", Edition2021) }
+   0.223158200s  INFO prepare_target{force=false package_id=serde v1.0.228 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\serde-291d5c27960f80df\run-build-script-build-script-build`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.223739400s  INFO prepare_target{force=false package_id=serde v1.0.228 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for serde v1.0.228/Build/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\Yuxiao\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde-1.0.228\\build.rs", Edition2021) }
+   0.223785900s  INFO prepare_target{force=false package_id=serde v1.0.228 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\serde-a5caf46b56ec8df6\build-script-build-script-build`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.224878100s  INFO prepare_target{force=false package_id=serde_core v1.0.228 target="serde_core"}: cargo::core::compiler::fingerprint: fingerprint error for serde_core v1.0.228/Check { test: false }/TargetInner { ..: lib_target("serde_core", ["lib"], "C:\\Users\\Yuxiao\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_core-1.0.228\\src\\lib.rs", Edition2021) }
+   0.224932500s  INFO prepare_target{force=false package_id=serde_core v1.0.228 target="serde_core"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\serde_core-c51413476724ab93\lib-serde_core`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_libgit2_prerelease
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.226500600s  INFO prepare_target{force=false package_id=serde_core v1.0.228 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for serde_core v1.0.228/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\Yuxiao\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_core-1.0.228\\build.rs", Edition2021) }
+   0.226560500s  INFO prepare_target{force=false package_id=serde_core v1.0.228 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\serde_core-b8a8d298619cc78f\run-build-script-build-script-build`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.227029100s  INFO prepare_target{force=false package_id=serde_core v1.0.228 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for serde_core v1.0.228/Build/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\Yuxiao\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_core-1.0.228\\build.rs", Edition2021) }
+   0.227085700s  INFO prepare_target{force=false package_id=serde_core v1.0.228 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\serde_core-ed19056696185879\build-script-build-script-build`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_libgit2_prerelease
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: git_midx_writer_dump
+  21: git_filter_source_repo
+  22: git_midx_writer_dump
+  23: BaseThreadInitThunk
+  24: RtlUserThreadStart
+   0.228084800s  INFO prepare_target{force=false package_id=serde_derive v1.0.228 target="serde_derive"}: cargo::core::compiler::fingerprint: fingerprint error for serde_derive v1.0.228/Build/TargetInner { for_host: true, proc_macro: true, ..: lib_target("serde_derive", ["proc-macro"], "C:\\Users\\Yuxiao\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_derive-1.0.228\\src\\lib.rs", Edition2021) }
+   0.228142600s  INFO prepare_target{force=false package_id=serde_derive v1.0.228 target="serde_derive"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\serde_derive-c27614ee9abf1401\lib-serde_derive`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_libgit2_prerelease
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: git_midx_writer_dump
+  19: git_filter_source_repo
+  20: git_midx_writer_dump
+  21: BaseThreadInitThunk
+  22: RtlUserThreadStart
+   0.228879000s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.103 target="proc_macro2"}: cargo::core::compiler::fingerprint: fingerprint error for proc-macro2 v1.0.103/Build/TargetInner { ..: lib_target("proc_macro2", ["lib"], "C:\\Users\\Yuxiao\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\proc-macro2-1.0.103\\src\\lib.rs", Edition2021) }
+   0.228928400s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.103 target="proc_macro2"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\proc-macro2-d28524424caab852\lib-proc_macro2`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.231337200s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.103 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for proc-macro2 v1.0.103/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\Yuxiao\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\proc-macro2-1.0.103\\build.rs", Edition2021) }
+   0.231395500s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.103 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\proc-macro2-ba02d76c10292909\run-build-script-build-script-build`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_libgit2_prerelease
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.231841700s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.103 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for proc-macro2 v1.0.103/Build/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\Yuxiao\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\proc-macro2-1.0.103\\build.rs", Edition2021) }
+   0.231884200s  INFO prepare_target{force=false package_id=proc-macro2 v1.0.103 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\proc-macro2-0423776498e15629\build-script-build-script-build`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_libgit2_prerelease
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.239758600s  INFO prepare_target{force=false package_id=quote v1.0.42 target="quote"}: cargo::core::compiler::fingerprint: fingerprint error for quote v1.0.42/Build/TargetInner { ..: lib_target("quote", ["lib"], "C:\\Users\\Yuxiao\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\quote-1.0.42\\src\\lib.rs", Edition2018) }
+   0.239821800s  INFO prepare_target{force=false package_id=quote v1.0.42 target="quote"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\quote-3ca7711ec6aef510\lib-quote`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.241539500s  INFO prepare_target{force=false package_id=quote v1.0.42 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for quote v1.0.42/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\Yuxiao\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\quote-1.0.42\\build.rs", Edition2018) }
+   0.241598900s  INFO prepare_target{force=false package_id=quote v1.0.42 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\quote-42769156ae6d00ff\run-build-script-build-script-build`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_libgit2_prerelease
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.242148400s  INFO prepare_target{force=false package_id=quote v1.0.42 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for quote v1.0.42/Build/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\Yuxiao\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\quote-1.0.42\\build.rs", Edition2018) }
+   0.242197300s  INFO prepare_target{force=false package_id=quote v1.0.42 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\quote-aa72afa38c65fd19\build-script-build-script-build`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_filter_source_repo
+  15: git_filter_source_repo
+  16: git_libgit2_prerelease
+  17: <unknown>
+  18: <unknown>
+  19: <unknown>
+  20: <unknown>
+  21: git_midx_writer_dump
+  22: git_filter_source_repo
+  23: git_midx_writer_dump
+  24: BaseThreadInitThunk
+  25: RtlUserThreadStart
+   0.245957900s  INFO prepare_target{force=false package_id=syn v2.0.110 target="syn"}: cargo::core::compiler::fingerprint: fingerprint error for syn v2.0.110/Build/TargetInner { ..: lib_target("syn", ["lib"], "C:\\Users\\Yuxiao\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\syn-2.0.110\\src\\lib.rs", Edition2021) }
+   0.246018600s  INFO prepare_target{force=false package_id=syn v2.0.110 target="syn"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\syn-d98d1b579f360e00\lib-syn`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.246822100s  INFO prepare_target{force=false package_id=serde_json v1.0.145 target="serde_json"}: cargo::core::compiler::fingerprint: fingerprint error for serde_json v1.0.145/Check { test: false }/TargetInner { ..: lib_target("serde_json", ["lib"], "C:\\Users\\Yuxiao\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_json-1.0.145\\src\\lib.rs", Edition2021) }
+   0.246876400s  INFO prepare_target{force=false package_id=serde_json v1.0.145 target="serde_json"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\serde_json-5a1cbd37e786df22\lib-serde_json`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_libgit2_prerelease
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: <unknown>
+  17: git_midx_writer_dump
+  18: git_filter_source_repo
+  19: git_midx_writer_dump
+  20: BaseThreadInitThunk
+  21: RtlUserThreadStart
+   0.249948500s  INFO prepare_target{force=false package_id=serde_json v1.0.145 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for serde_json v1.0.145/RunCustomBuild/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\Yuxiao\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_json-1.0.145\\build.rs", Edition2021) }
+   0.250006200s  INFO prepare_target{force=false package_id=serde_json v1.0.145 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\serde_json-f0e9c8da27b12366\run-build-script-build-script-build`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.250519100s  INFO prepare_target{force=false package_id=serde_json v1.0.145 target="build-script-build"}: cargo::core::compiler::fingerprint: fingerprint error for serde_json v1.0.145/Build/TargetInner { ..: custom_build_target("build-script-build", "C:\\Users\\Yuxiao\\.cargo\\registry\\src\\index.crates.io-1949cf8c6b5b557f\\serde_json-1.0.145\\build.rs", Edition2021) }
+   0.250595500s  INFO prepare_target{force=false package_id=serde_json v1.0.145 target="build-script-build"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\serde_json-662aa01c091de8e7\build-script-build-script-build`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_filter_source_repo
+  12: git_filter_source_repo
+  13: git_filter_source_repo
+  14: git_libgit2_prerelease
+  15: <unknown>
+  16: <unknown>
+  17: <unknown>
+  18: <unknown>
+  19: git_midx_writer_dump
+  20: git_filter_source_repo
+  21: git_midx_writer_dump
+  22: BaseThreadInitThunk
+  23: RtlUserThreadStart
+   0.251940000s  INFO prepare_target{force=false package_id=calculadora v0.1.0 (C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust) target="calculadora"}: cargo::core::compiler::fingerprint: fingerprint error for calculadora v0.1.0 (C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust)/Check { test: true }/TargetInner { name: "calculadora", doc: true, ..: with_path("C:\\Users\\Yuxiao\\Documents\\GitHub\\CursosSoftware\\LenguajesProgramación\\ejercicio1\\rust\\src\\main.rs", Edition2021) }
+   0.252003800s  INFO prepare_target{force=false package_id=calculadora v0.1.0 (C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust) target="calculadora"}: cargo::core::compiler::fingerprint:     err: failed to read `C:\Users\Yuxiao\Documents\GitHub\CursosSoftware\LenguajesProgramación\ejercicio1\rust\target\debug\.fingerprint\calculadora-2cd53b56d273158e\test-bin-calculadora`
+
+Caused by:
+    El sistema no puede encontrar el archivo especificado. (os error 2)
+
+Stack backtrace:
+   0: git_midx_writer_dump
+   1: git_midx_writer_dump
+   2: git_midx_writer_dump
+   3: git_midx_writer_dump
+   4: git_filter_source_repo
+   5: git_filter_source_repo
+   6: git_filter_source_repo
+   7: git_filter_source_repo
+   8: git_filter_source_repo
+   9: git_filter_source_repo
+  10: git_filter_source_repo
+  11: git_libgit2_prerelease
+  12: <unknown>
+  13: <unknown>
+  14: <unknown>
+  15: <unknown>
+  16: git_midx_writer_dump
+  17: git_filter_source_repo
+  18: git_midx_writer_dump
+  19: BaseThreadInitThunk
+  20: RtlUserThreadStart
+   Compiling proc-macro2 v1.0.103
+   Compiling quote v1.0.42
+   Compiling serde_core v1.0.228
+   Compiling serde v1.0.228
+   Compiling serde_json v1.0.145
+error: could not compile `serde_json` (build script) due to 1 previous error
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `proc-macro2` (build script) due to 1 previous error
+error: could not compile `serde_core` (build script) due to 1 previous error
+error: could not compile `quote` (build script) due to 1 previous error
+error: could not compile `serde` (build script) due to 1 previous error
