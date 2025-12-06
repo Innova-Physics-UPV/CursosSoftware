@@ -28,6 +28,24 @@ fn main() {
     let mut emp = Empleado::new("Ana".to_string(), 30, 30000.0);
 
     // TODO: mostrar, aumentar salario y mostrar de nuevo
+    emp.mostrar();
+    emp.aumentar_salario(10.0);
+    emp.mostrar();
+
     // TODO: clonar y mover ownership
+    let clonado = emp.clone();
+    let resultado = clonado.procesar();
+    println!("{}", resultado);
+    println!("Empleado original después de procesar: {:?}", emp);
+
     // TODO: iterar sobre un vector de empleados
+    let empleados = vec![
+        Empleado::new("Carlos".to_string(), 25, 25000.0),
+        Empleado::new("Diana".to_string(), 35, 35000.0),
+        Empleado::new("Eva".to_string(), 28, 28000.0),
+    ];
+
+    for empleado in empleados.iter() {
+        empleado.mostrar();
+    }
 }

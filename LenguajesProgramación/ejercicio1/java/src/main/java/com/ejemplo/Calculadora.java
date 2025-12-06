@@ -28,7 +28,7 @@ public class Calculadora {
     }
     
     public static void main(String[] args) {
-        Operacion op = new Operacion(15.0, 4.0, "/");
+        Operacion op = new Operacion(15.0, 4.0, "+");
         
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(op);
@@ -37,3 +37,4 @@ public class Calculadora {
         System.out.println("Resultado: " + op.calcular());
     }
 }
+

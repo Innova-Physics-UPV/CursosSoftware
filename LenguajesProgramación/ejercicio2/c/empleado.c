@@ -12,6 +12,7 @@ Empleado* crear_empleado(const char* nombre, int edad, double salario) {
     Empleado* emp = malloc(sizeof(Empleado));
     // TODO: asignar memoria para el nombre
     // emp->nombre = ...
+    emp ->nombre = strdup(nombre);
     emp->edad = edad;
     emp->salario = salario;
     return emp;
@@ -29,7 +30,7 @@ void mostrar_empleado(const Empleado* emp) {
 }
 
 int main() {
-    Empleado* emp = crear_empleado("Juan Perez", 30, 50000.0);
+    Empleado* emp = crear_empleado("Yuxiao", 30, 50000.0);
     mostrar_empleado(emp);
     // TODO: crear al menos un Empleado y mostrarlo
     return 0;

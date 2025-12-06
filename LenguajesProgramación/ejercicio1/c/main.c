@@ -3,6 +3,6 @@
 
 int main() {
     printf("Resultado: %d\n", suma(5, 3));
-    printf("Factorial de 5: %d\n", factorial(5));
+    printf("Factor  de 5: %d\n", factorial(5));
     return 0;
 }

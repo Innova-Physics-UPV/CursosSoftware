@@ -1,7 +1,7 @@
 use serde::{Deserialize, Serialize};
 use serde_json::to_string_pretty;
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug, Clone)]
 struct Operacion {
     operando1: f64,
     operando2: f64,
@@ -26,28 +26,17 @@ fn calcular(op: &Operacion) -> f64 {
 
 fn main() {
     let operacion = Operacion {
-        operando1: 10.0,
+        operando1: 9.0,
         operando2: 3.0,
-        operador: "+".to_string(),
+        operador: "/".to_string(),
     };
     
     let resultado = Resultado {
-        operacion: operacion,
+        operacion: operacion.clone(),
         resultado: calcular(&operacion),
     };
     
-    let json = {
-        match &resultado {
-            value => {
-            }
-            _ => (),
-        }
-        let vec = try(to_vec_pretty(value));
-        let string = unsafe {
-            // We do not emit invalid UTF-8.
-            String::from_utf8_unchecked(vec)
-        };
-        Ok(string)
-    }.unwrap();
+    let json = to_string_pretty(&resultado).unwrap();
     println!("{}", json);
 }
+

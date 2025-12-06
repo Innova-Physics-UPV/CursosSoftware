@@ -3,7 +3,7 @@ public class Automovil extends Vehiculo {
 
     public Automovil(String marca, String modelo, int año, double consumoPorKm) {
         super(marca, modelo, año);
-        consumoPorKm = consumoPorKm; // Error aquí: asignación a sí mismo
+        this.consumoPorKm = consumoPorKm;
     }
 
     @Override
@@ -13,6 +13,6 @@ public class Automovil extends Vehiculo {
 
     @Override
     public double calcularConsumo(double distancia) {
-        return distancia * consumoPorKm;
+        return distancia * consumoPorKm; //Aquí se calcula el consumo de litros del vehiculo
     }
 }

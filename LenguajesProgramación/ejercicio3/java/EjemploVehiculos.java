@@ -14,7 +14,8 @@ public class EjemploVehiculos {
     public static void main(String[] args) {
         Vehiculo[] vehiculos = {
             new Automovil("Toyota", "Corolla", 2020, 0.07),
-            new AutoElectrico("Tesla", "Model 3", 2023)
+            new AutoElectrico("Tesla", "Model 3", 2021),
+            new MotoElectrica("Moto", "Model 1", 2025)
         };
 
         for (Vehiculo v : vehiculos) {
