@@ -22,8 +22,10 @@
 <BaseCard>
     <h3>Añade Movimientos</h3>
     <div class="input-group">
+        <p>Nuevogasto: {nuevoGasto}
+        </p>
         <input 
-            type="number" 
+            type="number"
             placeholder="0"
             bind:value={nuevoGasto} 
             onkeydown={(e)=>{if(e.key == 'Enter'){guardar();}}}
