@@ -1,0 +1,19 @@
+[package]
+name = "redes"
+version = "0.1.0"
+edition = "2021"
+description = "Ejercicios de redes:(ej4, ej8, ej10)"
+
+[dependencies]
+
+[[bin]]
+name = "ej4"
+path = "ej4.rs"
+
+[[bin]]
+name = "ej8"
+path = "ej8.rs"
+
+[[bin]]
+name = "ej10"
+path = "ej10.rs"
